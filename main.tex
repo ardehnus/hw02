@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{$<sa04050>$}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -49,12 +49,23 @@
 
   \begin{solution}
     % Write your solution here
+        
+    When the function is taken to be partial:
+
+         The set of real numbers is taken as the domain of this function while its codomain is set of positive real numbers.
+    
+    When the function is taken to be total:
+    
+         The set of real numbers is taken as the domain while the codomain is the set of complex numbers.
   \end{solution}
   
   \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
     % Write your solution here
+    
+    The domain of the function is the set of bit string and the codomain of the function is the set of integers. $i$ points out the index of very first $1$ in the bit string from right to left and $i$ belongs to the set of integers. $i$ is actually the number at which the bit string is mapped on the codomain because of its indication of the $1$ in the bit string. But if there is a bit string in the domain that does not contain $1$ in itself then the value of $i$ is not defined for such a string. This means that the function is undefined when the bit string does not have $1$ in it.
+    
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -66,6 +77,42 @@
 
   \begin{solution}
     % Write your solution here
+    
+    
+    For a relation on a set to be an equivalence relation, it must be reflexive, symmetric and transitive.
+    \begin{enumerate}
+        \item $X$ and $Y$ have been in class together
+        
+        This relaton on set $S$ is reflexive because $X$ and $X$ have been in class together and also $Y$ and $Y$ have been in class together.
+        
+        This relation on set $S$ is symmetric because $X$ and $Y$ have been in class together and also $Y$ and $X$ have been in class together.
+        
+        Ths realtion is however not transitive. Introduce another person $A$. So, $X$ and $Y$ have been in class together and lets say $Y$ and $A$ have been in class together. This does not neceesariy mean that $X$ and $A$ have been in class together because it possible that $Y$ and $A$ have been in a separate class where $x$ did not exist.
+        
+        Since one of the required characteristics for equivalence is not met then this relation does not define equivalence on set $S$. 
+        
+        \item $X$ and $Y$ rhyme
+        
+        This relation on set $S$ is reflexive because $X$ and $X$ rhyme and also $Y$ and $Y$ rhyme.
+        
+        Tis relation on set $S$ is symmetrc becasue if $X$ and $Y$ rhyme then $Y$ and $X$ also rhyme.
+        
+        This relation on set $S$ is transitive. Inroduce another person $A$. If $X$ and $Y$ rhyme and lets say $Y$ and $A$ rhyme then $X$ and $A$ also rhyme.
+        
+        All of the required characteristics for equivalence are met then this relation defines equivalence on set $S$.    
+        
+        \item $X$ is a subset of $Y$
+                
+        This relation on set $S$ is reflexive because $X$ is a subset of $X$ and also $Y$ is a subset of $Y$.
+        
+        This relation on set $S$ may or may not be symmetric. $X$ is a subset of $Y$ and $Y$ is a subset of $X$. thius is only possible when $X$ and $Y$ are equivalent to eachother. 
+        
+        This relation on set $S$ is transitive. Inroduce another person $A$. If $X$ is a subset of $Y$ and lets say $Y$ is a subset of $A$ then $X$ is also a subset of $A$.
+        
+        All of the required characteristics for equivalence are met then this relation defines equivalence on set $S$.    
+        
+    \end{enumerate}
+    
   \end{solution}
 
 \end{parts}
@@ -74,6 +121,33 @@
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
   \begin{solution}
     % Write your solution here
+        
+    We have $A = f^{-1}(B)$. This means that the inverse function is mapping $B$ to $A$. We have the informaton that inverse functions are formed by interchanging the images with pre-images and to go back from this stage we have to interchange again the pre-images and images of the inverse function. Now, $A$ is the domain and $B$ is the codomain of the function $f$. we have the information that f is invertible because only the it would have been made an inverse functuion. Becasue of this informatiowe can say that their is a one-one correspondence from $A$ to $B$ or in other words bijection exists on $f$. Let $R$ be the set of the range of $f$. Because of bijection we can say that the set of rnage of $f$ will be equal to the set of the codomain of $f$ that is,
+    
+    $f(A)=B$
+    
+    or
+    
+    $f(A)=R$
+    
+    Both of the above then mean the same thing. Furthermore, we can say that $R$ is the improper subset of $B$ or vice versa.
+    
+    $R\subseteq B$
+    
+    or 
+    
+    $B\subseteq R$
+    
+    From above we know that,
+    
+     $f(A)=R$
+     
+     then by replacing $R$ with $f(A)$
+     
+     $f(A)\subseteq B$
+     
+     this is the required proof.
+    
   \end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
@@ -89,6 +163,18 @@
 
   \begin{solution}
     % Write your solution here
+    
+    In order to prove that the cardinality of $A$ is same as that of the $B$ we need tto develop a bijection from $A$ to $B$ under a function, lets say f(w) where $w \in A$.
+    $$
+    f(w)=
+    \begin{cases}
+     w-\{1\} & if \ \{1\} \in w  \\
+     w\cup \{1\} & if \ \{1\} \not \in w \\ 
+   \end{cases}
+   $$
+    
+    The reason that the function is defined particularily on the basis of the element 1 is that the element in n at the very least will be $\{1\}$. So to form the elements for $B$ we just need to check that if $\{1\}$ exists within it or not, if it does exist then we just need to remove $\{1\}$ from the set to get the set for $B$ and if it does not exist then we need to add $\{1\}$ to the set to get the set for $B$. Being a set $A$ already contains elements thsat are distinct so when the adding or subtracting of $\{1\}$ is applied then that would lead to distinct outputs as well and because of distinction there can be no element in $B$ that does not has a pre-image becasue all the elements of $B$ are formed by performng $f$ on $A$.
+    So $f$ holds the property of bijection from set $A$ to set $B$ becasue of the above mentioned statements and since there exists a bijection from set $A$ to set $B$ then that means that the cardnality of both the sets is also equal.
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -122,10 +208,127 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
   \begin{solution}
     % Write your solution here
+      
+  When $M_1$ and $n=0$:
+  
+  $CapW=2$
+  $SteH=0$
+  $CapH=1$
+  
+  When $M_2$ and $n=1$:
+  
+  $CapW=3$
+  $SteH=1$
+  $CapH=2$
+  
+  When $M_3$ and $n=2$:
+  
+  $CapW=4$
+  $SteH=2$
+  $CapH=2$
+  
+  When $M_4$ and $n=3$:
+  
+  $CapW=5$
+  $SteH=3$
+  $CapH=3$
+  
+  When $M_5$ and $n=4$:
+  
+  $CapW=6$
+  $SteH=4$
+  $CapH=3$
+  
+  For $CapW$ we find the sequence to be,
+  
+  $2,3,4,5,6,...$
+  
+  The above sequence is an A.P and thus can be written as,
+  
+  $CapW(n)=n+1$
+  
+  For $SteH$ we find the sequence to be,
+  
+  $0,1,2,3,4,...$
+  
+  The above sequence is an AP and thus can be written as,
+  
+  $SteH(n)=n-1$
+  
+  For $CapH$ we find the sequence to be,
+  
+  $1,2,2,3,3,..$
+  
+  The above sequence can be written in the form of,
+  
+  $CapH(n)=\lceil{(n+1/2)}\rceil$
+  
+  For number of dots in the cap,
+  
+  let the max dots in a row be $C_m$ which can be written as,
+  
+  $C_m=CapW(n)$
+  
+  let the least dots in a row be $C_l$ which can be written as,
+ 
+  $C_l=CapW(n)-\big(CapH(n)-1 \big)$
+  
+  The sequence formed can be written as,
+  
+  $C_l, C_l +1, (C_l +1)+1,.... C_m$
+  
+  The sequence is also in form of an AP. If we somehow find the summation of the whole AP then this would give us the total number of dots in the cap. We have,
+  
+  $S_n=n/2 * (a+l)$
+  
+  Where a is the first term of the sequence and l is the last term of the sequence and n is the number of terms in the sequence. In our scenario,
+  
+  $a=C_l$
+  
+  $l=C_m$
+  
+  $n=CapH(n)$
+  
+  So total number of dots in the cap can be written as,
+  
+  $S_c=n/2*(a+l)$
+  
+  For number of dots in the stem,
+  
+  The number of dots in the stem can be expressed in terms of its height because through observation we have seen that if we write the height of the stem two times we will get the number of the dots in the stem so,
+  
+  $D_s=2*SteH(n)$
+  
+  where $D_s$ is the total number of dots in the stem.
+  
+  For complete number of dots in any mushroom the formula is derived in the closed form to be,
+  
+  $M_n=D_s+S_c$
+  
+  $M_n=2*(n-1)+\big( (\lceil (n+1)/2\rceil)/2*(n+1+(n+1-(\lceil (n+1)/2\rceil)-1))\big)$
+  
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
     % Write your solution here
+    
+    Total height= $SteH(n)+CapH(n)$
+    
+    For 20th mushroom the stem height will be,
+    
+    $SteH(20)=20-1$
+    
+    $SteH(20)=19$
+    
+    the cap height wll be,
+    
+    $CapH(20)=\lceil{20+1/2}\rceil$
+    
+    $CapH(n)=11$
+    
+    Total height= 19+11
+    
+    Total height= 30
   \end{solution}
 \end{parts}
 
@@ -154,6 +357,18 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
  
     \begin{solution}
     % Write your solution here
+    
+    lets introduce a function $f(n)$ in which $x \in \mathbb{Z^+}$ becaue the initial values here are taken as 1 and 2.
+    $$
+    f(n)=
+    \begin{cases}
+     1 & if \ n-1  \\
+     2 & if \ n-2 \\ 
+     f(n-1)+f(n-2) & n>2
+   \end{cases}
+   $$
+   
+   For every number in the domain of this function that is positive integers there is always an image which is the Fibonacci number. Because sum of two positive numbers is always unique. This means that the domain we have taken does not allow the sum of two numbers to match with the sum of any other two numbers which implies that the sum of two numbers is always unique. So this means that the each integer is mapped to a unique element in the Fibonacci which is the property of a function being injective. The sum of two positive integers that is a set starting from 1 is always another positive integer so this means that the codoman is always covered by the domain which means that for every Fibonacci number there is a integer as its domain. So this means that the function is also surjective. Since the function is both surjective and injective then it is actually bijective. Thus we have just proved the bijection from the set of positive integers to the Fibonacci series from which we can infer that the Fibonacci series is countable.
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Modified Wythoff Array is countable. 
 
